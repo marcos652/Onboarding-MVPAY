@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { HiMenuAlt3, HiX } from 'react-icons/hi';
+import { HiMenuAlt3, HiX, HiDownload } from 'react-icons/hi';
 import './Navbar.css';
 
 const navLinks = [
@@ -77,6 +77,15 @@ export default function Navbar() {
               </button>
             ))}
           </div>
+
+          <button
+            className="navbar__download-btn"
+            onClick={() => window.print()}
+            title="Baixar como PDF"
+          >
+            <HiDownload size={18} />
+            <span>Baixar PDF</span>
+          </button>
 
           <button className="navbar__mobile-toggle" onClick={() => setMobileOpen(!mobileOpen)}>
             {mobileOpen ? <HiX size={24} /> : <HiMenuAlt3 size={24} />}

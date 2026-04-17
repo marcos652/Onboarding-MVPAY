@@ -187,6 +187,37 @@
 }
 
 /* ============================================
+   DOWNLOAD BUTTON
+   ============================================ */
+
+.navbar__download-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--gradient-brand);
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 8px 18px;
+  border-radius: 100px;
+  transition: var(--transition-base);
+  white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(34, 184, 207, 0.3);
+}
+
+.navbar__download-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(34, 184, 207, 0.4);
+}
+
+.navbar__download-btn:active {
+  transform: translateY(0);
+}
+
+/* ============================================
    RESPONSIVE
    ============================================ */
 
@@ -202,5 +233,98 @@
 @media (max-width: 768px) {
   .navbar__inner {
     padding: 0 20px;
+  }
+  .navbar__download-btn span {
+    display: none;
+  }
+  .navbar__download-btn {
+    padding: 8px 12px;
+  }
+}
+
+/* ============================================
+   PRINT STYLES (PDF Download)
+   ============================================ */
+
+@media print {
+  /* Hide interactive elements */
+  .navbar,
+  .progress-bar,
+  .hero__scroll-indicator,
+  .hero__cta,
+  .navbar__download-btn,
+  .navbar__mobile-toggle,
+  .navbar__mobile-menu {
+    display: none !important;
+  }
+
+  /* Reset all sections */
+  body {
+    background: white !important;
+    color: #0F1B3D !important;
+    font-size: 11pt !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .section {
+    padding: 40px 20px !important;
+    page-break-inside: avoid;
+  }
+
+  .hero {
+    min-height: auto !important;
+    padding-top: 40px !important;
+  }
+
+  .hero__bg {
+    display: none !important;
+  }
+
+  .hero__content {
+    gap: 20px !important;
+  }
+
+  /* Ensure gradient text prints with color */
+  .gradient-text {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Page breaks */
+  .roadmap,
+  .solution,
+  .phases,
+  .training,
+  .capture,
+  .registradora,
+  .regulatory,
+  .slc,
+  .credentials,
+  .final {
+    page-break-before: auto;
+  }
+
+  /* Full width grids */
+  .container {
+    max-width: 100% !important;
+    padding: 0 20px !important;
+  }
+
+  /* Glass card backgrounds */
+  .glass-card {
+    background: #f8f9fa !important;
+    box-shadow: none !important;
+    border: 1px solid #e0e0e0 !important;
+  }
+
+  /* Footer */
+  footer {
+    page-break-before: auto;
   }
 }
