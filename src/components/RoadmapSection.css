@@ -1,0 +1,147 @@
+/* ============================================
+   ROADMAP SECTION
+   ============================================ */
+
+.roadmap {
+  background: var(--color-bg);
+  text-align: center;
+}
+
+.roadmap__header {
+  margin-bottom: 20px;
+}
+
+.roadmap__timeline {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  padding-top: 40px;
+}
+
+.roadmap__line {
+  position: absolute;
+  top: 95px;
+  left: 10%;
+  right: 10%;
+  height: 4px;
+  background: var(--gradient-brand);
+  border-radius: 2px;
+  opacity: 0.3;
+}
+
+.roadmap__step {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  position: relative;
+  padding: 24px 12px;
+}
+
+.roadmap__step-number {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  font-weight: 300;
+  color: var(--color-gray-300);
+  letter-spacing: 0.02em;
+}
+
+.roadmap__step-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-base);
+  position: relative;
+  z-index: 2;
+}
+
+.roadmap__step:hover .roadmap__step-icon {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: var(--shadow-lg);
+}
+
+.roadmap__step-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  position: absolute;
+  top: 90px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  box-shadow: 0 0 10px currentColor;
+}
+
+.roadmap__step-content {
+  text-align: center;
+}
+
+.roadmap__step-title {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-navy);
+  margin-bottom: 8px;
+}
+
+.roadmap__step-desc {
+  font-size: 0.85rem;
+  color: var(--color-gray-500);
+  line-height: 1.6;
+  max-width: 200px;
+  margin: 0 auto;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .roadmap__timeline {
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+  
+  .roadmap__line {
+    top: 0;
+    bottom: 0;
+    left: 30px;
+    right: auto;
+    width: 4px;
+    height: auto;
+  }
+  
+  .roadmap__step {
+    flex-direction: row;
+    text-align: left;
+    padding: 20px 20px 20px 70px;
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  .roadmap__step-number {
+    position: absolute;
+    left: 0;
+    top: 20px;
+    font-size: 1.2rem;
+  }
+  
+  .roadmap__step-dot {
+    position: absolute;
+    left: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .roadmap__step-content {
+    text-align: left;
+  }
+  
+  .roadmap__step-desc {
+    max-width: none;
+  }
+}

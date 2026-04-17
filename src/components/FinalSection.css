@@ -1,0 +1,140 @@
+/* ============================================
+   FINAL SECTION
+   ============================================ */
+
+.final {
+  background: var(--color-bg);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.final__layout {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+.final__left {
+  flex: 0 0 360px;
+}
+
+.final__logo-area svg {
+  width: 100%;
+  max-width: 340px;
+  height: auto;
+}
+
+.final__left-text {
+  font-size: 1rem;
+  color: var(--color-gray-500);
+  margin-top: 16px;
+  line-height: 1.6;
+}
+
+.final__right {
+  flex: 1;
+}
+
+.final__cards {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+}
+
+.final__card {
+  flex: 1;
+  background: var(--color-white);
+  border-radius: var(--radius-xl);
+  padding: 44px 32px;
+  text-align: center;
+  box-shadow: var(--shadow-card);
+  transition: var(--transition-base);
+  position: relative;
+}
+
+.final__card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-xl);
+}
+
+.final__card-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+}
+
+.final__card-icon--blue {
+  background: linear-gradient(135deg, #4A90D915, #2563EB10);
+  color: #4A90D9;
+}
+
+.final__card-icon--green {
+  background: linear-gradient(135deg, #4CAF5015, #8BC34A10);
+  color: #4CAF50;
+}
+
+.final__card-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-navy);
+  margin-bottom: 16px;
+}
+
+.final__card-title--green {
+  color: #4CAF50;
+}
+
+.final__card-number {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 300;
+  color: var(--color-gray-200);
+  margin-bottom: 16px;
+}
+
+.final__card-text {
+  font-size: 0.92rem;
+  color: var(--color-gray-500);
+  line-height: 1.7;
+}
+
+.final__card-divider {
+  flex-shrink: 0;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.final__card-divider svg {
+  height: 200px;
+  width: 40px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .final__layout {
+    flex-direction: column;
+    gap: 40px;
+  }
+  
+  .final__left {
+    flex: none;
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .final__cards {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .final__card-divider {
+    display: none;
+  }
+}

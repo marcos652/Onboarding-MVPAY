@@ -1,0 +1,354 @@
+/* ============================================
+   SLC SECTION
+   ============================================ */
+
+.slc {
+  background: var(--color-white);
+  text-align: center;
+}
+
+.slc__badge {
+  display: inline-block;
+  background: var(--gradient-brand);
+  color: white;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1rem;
+  padding: 8px 24px;
+  border-radius: 100px;
+  margin-bottom: 20px;
+  letter-spacing: 0.1em;
+}
+
+/* Intro Card */
+.slc__intro {
+  display: flex;
+  align-items: flex-start;
+  gap: 28px;
+  padding: 36px 40px;
+  text-align: left;
+  margin-bottom: 60px;
+}
+
+.slc__intro-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #22B8CF15, #2563EB10);
+  color: #22B8CF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.slc__intro-content h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--color-navy);
+  margin-bottom: 12px;
+}
+
+.slc__intro-content p {
+  font-size: 1rem;
+  color: var(--color-gray-600);
+  line-height: 1.8;
+}
+
+/* ========================
+   Flow Pipeline
+   ======================== */
+.slc__flow {
+  margin-bottom: 60px;
+}
+
+.slc__flow-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--color-navy);
+  margin-bottom: 40px;
+}
+
+.slc__pipeline {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 12px;
+  position: relative;
+  padding-top: 30px;
+}
+
+.slc__pipeline-line {
+  position: absolute;
+  top: 50px;
+  left: 5%;
+  right: 5%;
+  width: 90%;
+  height: 60px;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.slc__pipeline-step {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 4px;
+}
+
+/* Dot on the pipeline line */
+.slc__pipeline-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  margin-bottom: 12px;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.9);
+}
+
+.slc__pipeline-dot-ring {
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid;
+  animation: slc-pulse 2s ease-in-out infinite;
+}
+
+@keyframes slc-pulse {
+  0%, 100% { transform: scale(1); opacity: 0.6; }
+  50% { transform: scale(1.3); opacity: 0; }
+}
+
+/* Step number */
+.slc__pipeline-num {
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 800;
+  opacity: 0.4;
+  margin-bottom: 8px;
+  letter-spacing: 0.05em;
+}
+
+/* Step icon */
+.slc__pipeline-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-base);
+  margin-bottom: 12px;
+}
+
+.slc__pipeline-step:hover .slc__pipeline-icon {
+  transform: scale(1.1);
+  box-shadow: var(--shadow-md);
+}
+
+/* Step title */
+.slc__pipeline-title {
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--color-navy);
+  margin-bottom: 8px;
+  line-height: 1.3;
+  min-height: 2.6em;
+}
+
+/* Step description */
+.slc__pipeline-desc {
+  font-size: 0.72rem;
+  color: var(--color-gray-500);
+  line-height: 1.55;
+}
+
+/* Arrow between steps */
+.slc__pipeline-arrow {
+  position: absolute;
+  right: -14px;
+  top: 42px;
+  z-index: 3;
+  background: var(--color-white);
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-sm);
+}
+
+/* ========================
+   Benefits
+   ======================== */
+.slc__benefits {
+  margin-bottom: 60px;
+}
+
+.slc__benefits-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--color-navy);
+  margin-bottom: 28px;
+}
+
+.slc__benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.slc__benefit {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 24px;
+  background: var(--color-gray-100);
+  border-radius: var(--radius-md);
+  text-align: left;
+  transition: var(--transition-base);
+  border: 1px solid transparent;
+}
+
+.slc__benefit:hover {
+  background: var(--color-white);
+  border-color: var(--color-gray-200);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.slc__benefit-emoji {
+  font-size: 2rem;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.slc__benefit strong {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--color-navy);
+  margin-bottom: 4px;
+}
+
+.slc__benefit span {
+  font-size: 0.85rem;
+  color: var(--color-gray-500);
+  line-height: 1.5;
+}
+
+/* ========================
+   MovingPay Role
+   ======================== */
+.slc__movingpay {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.slc__movingpay-inner {
+  background: var(--gradient-hero);
+  border-radius: var(--radius-xl);
+  padding: 48px 44px;
+  color: white;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+}
+
+.slc__movingpay-inner::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(34, 184, 207, 0.2), transparent);
+  pointer-events: none;
+}
+
+.slc__movingpay-inner h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.slc__movingpay-inner p {
+  font-size: 1.02rem;
+  line-height: 1.9;
+  opacity: 0.85;
+  position: relative;
+}
+
+/* ========================
+   Responsive
+   ======================== */
+@media (max-width: 1100px) {
+  .slc__pipeline {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px 16px;
+  }
+
+  .slc__pipeline-arrow {
+    display: none;
+  }
+
+  .slc__pipeline-line {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .slc__intro {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+  
+  .slc__intro-content {
+    text-align: center;
+  }
+  
+  .slc__pipeline {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px 16px;
+  }
+
+  .slc__pipeline-step:last-child {
+    grid-column: 1 / -1;
+    max-width: 200px;
+    margin: 0 auto;
+  }
+  
+  .slc__benefits-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .slc__movingpay-inner {
+    padding: 36px 28px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .slc__pipeline {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .slc__pipeline-step:last-child {
+    max-width: 100%;
+  }
+}
